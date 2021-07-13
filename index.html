@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>AllGamer</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<style type="text/css">
+		*
+		{
+			margin: 0;
+			padding: 0;
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box;
+			-ms-box-sizing:border-box;
+			-o-box-sizing:border-box;
+			box-sizing:border-box;
+		}
+		header 
+		{
+			width: 100%;
+			height: auto;
+			/*background-color: #ccffcc;*/
+			margin: auto;
+			position: relative;
+		}
+		section 
+		{
+			width: 80%;
+			height: auto;
+			/*background-color: #ffccaa;*/
+			margin: auto;
+			text-align: center;
+			background:url(imagenes/section.jpg);
+		}
+		section .foto 
+		{
+			display: inline-block;
+			vertical-align: middle; 
+		}
+		section .texto
+		{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		nav
+		{
+			width: 100%;
+			height: auto;
+			background:rgba(51,51,51,.8);
+			z-index: 1000;
+			position: fixed;
+			top: 0;
+			text-align: center;
+		}
+		nav .navegador
+		{
+			display: inline-block;
+		}
+		article
+		{
+			width: 100%;
+			height: auto;
+			/*background-color: #ccffcc;*/
+			/*margin: auto;*/
+			text-align: center;
+			overflow: hidden;
+			margin: auto;
+		}
+		article .boxtexto
+		{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		article .boxjuegos
+		{
+            display: inline-block; 
+            vertical-align: middle; 
+		}
+		footer
+		{
+			width: 100%;
+			height: auto;
+			/*background-color: #000;*/
+			text-align: center;
+		}
+		footer .copyright
+		{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		footer
+		{
+			background: url(imagenes/personajes.jpg);
+		}
+		header .caja_titulo
+		{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		@font-face{
+			font-family: Anton-Regular;
+			src:url(Fonts/Anton-Regular.ttf);
+		}
+		.caja_titulo
+		{
+			width: 80%;
+			border: solid 4px #00ffff;
+			font-family: Anton;
+			font-size: 	30px;
+			position: absolute;
+			top: 40%;
+			left: 10%;
+			text-align: center;
+		}
+		.caja_titulo .boton
+		{
+			display: inline-block;
+		}
+		@font-face{
+			font-family: tahoma;
+			src:url(Fonts/tahoma.ttf);
+		}
+		.titulo
+		{
+			text-align: center;	
+			color: #fff;
+			font-family: Tahoma;
+			text-shadow: 0px 0px 2px #000;
+			margin-bottom: 2%;
+		}
+		@font-face{
+			font-family: tahoma;
+			src:url(Fonts/tahoma.ttf);
+		}
+		.boton
+		{
+			width: 120px;
+			padding: 5px 0px;
+			background-color: #ff6600;
+			font-family: Tahoma;
+			color: #fff;
+			text-align: center;
+			margin: 0px 2%;
+			border: solid 1px #fff;
+			border-radius: 5px;
+		}
+		.menu
+		{
+			width:150px;
+			padding: 8px 0px;
+			/*background-color: #336699;*/
+			float: right;		
+			/*border-left: solid 1px #fff;*/
+			font-size: 20px;
+			font-family: Arial;
+			color: #fff;
+			text-align: center;
+			margin-top: 3%;
+		}
+		.menu:hover 
+		{
+			background-color: #d1c9c9;
+		}
+		a
+		{
+			text-decoration: none;
+		}
+		.logo
+		{
+			float: left;
+			margin: 10px 1% 1% 10%;
+		}
+		.foto
+		{
+			width: 30%;
+			min-width: 350px;
+			height: 100%;
+			/*border: solid 1px #ff0000;*/
+			margin: 20px;
+		}
+		.texto
+		{
+			width: 35%;
+			min-width: 350px;
+			height: auto;
+			/*border: solid 1px #ff0000;*/
+			margin: 20px;
+		}
+		@font-face{
+			font-family: tahoma;
+			src:url(Fonts/tahoma.ttf);
+		}
+		.mision
+		{
+			font-family: Tahoma;
+			text-align: center;
+			color: #ff0000;
+			text-decoration: underline;
+			font-size: 28px;
+			margin: 3%;
+		}
+		@font-face{
+			font-family: tahoma;
+			src:url(Fonts/tahoma.ttf);
+		}
+		.parrafo
+		{
+			width: 100%;
+			height: auto;
+			font-family: Tahoma;
+			text-align: justify;
+			margin-bottom: 4%;
+			font-size: 18px;
+			color: #fff;
+		}
+		@font-face{
+			font-family: Anton-Regular;
+			src:url(Fonts/Anton-Regular.ttf);
+		}
+		.titulo_acerca
+		{
+			width: 100%;
+			padding: 8px 0px;
+			/*background-color: #000;*/
+			color:#fff;
+			font-family: Anton;
+			font-size: 36px;
+			text-align: center;
+			margin-top: 5%;
+			margin-bottom: 3%;
+		}
+		.boxjuegos
+		{
+			max-width: 800px;
+			width: auto;
+			height: auto;
+			/*background-color: #fff;*/
+			/*float: left;*/
+			margin: 0px;
+			float: right; 
+		}
+		@font-face{
+			font-family: Anton-Regular;
+			src:url(Fonts/Anton-Regular.ttf);
+		}
+		.titulo_games
+		{
+			width: 200px;
+			text-align: center;
+			font.size: 60px;
+			font-family: Anton;
+			color:#00ffff;
+			margin: 10px;
+		}
+		@font-face{
+			font-family: tahoma;
+			src:url(Fonts/tahoma.ttf);
+		}
+		.boxtexto
+		{
+			width: 250px;
+			/*border: solid 1px #fff;*/
+			color: #fff;
+			text-align: center;
+			margin: 10px;
+			margin-left:100px;
+			font-family: Tahoma; 
+			font-size: 18px;
+		}
+		.escalar
+		{
+			transition-duration: 0.5s;
+			z-index: 5;
+			/*border: solid 1px #00ffff;*/
+		}
+		.escalar:hover
+		{
+			transform: scale(1.3);
+		}
+		@font-face{
+			font-family: Anton-Regular;
+			src:url(Fonts/Anton-Regular.ttf);
+		}
+		.titulo_juegos
+		{
+			width: 100%;
+			padding: 8px 0px;
+			font-family: Anton;
+			color: #fff;
+			font-size: 36px;
+			text-align: center;
+			/*background-color: #000;*/
+			margin-top: 5%;
+			margin-bottom: 3%; 
+		}
+		.imagenes_juegos
+		{
+			width: 100%;
+			height: auto;
+			text-align: right;
+			/*border:solid 1px #00ff00;*/
+			margin-left: 0;
+		}
+		.texto_juegos
+		{
+			width: 300px;
+			height: auto;
+			text-align: right;
+			/*border:solid 1px #ffff00;*/
+			margin-left: 20%;
+		}
+		@font-face{
+			font-family: tahoma;
+			src:url(Fonts/tahoma.ttf);
+		}
+		.texto_footer
+		{
+			font-family: Tahoma;
+			color: #fff;
+		}
+		.navegador
+		{
+			text-align: center;
+		}
+		body
+		{
+			background:url(imagenes/fondo.png); 
+		}
+	    .pie
+	    {
+	    	width: 100%;
+	    	height: 200px;
+	    	/*background: #000;*/
+	    	text-align: center;
+	    }
+	    .pie .text
+	    {
+	    	display: inline-block;
+			vertical-align: middle;
+	    }
+	    .pie .mapa
+	    {
+	    	display: inline-block;
+			vertical-align: middle;
+	    }
+	    .ultimo
+	    {
+	    	text-align: center;
+	    }
+	    .ultimo .redsoc
+		{
+			display: inline-block;
+			vertical-align: middle;	
+		}
+	    .redsoc
+	    {
+	    	width: 80%;
+	    	height: auto;
+	    	/*border: solid 1px #fff;*/
+	    }
+	    .mapa
+	    {
+	    	text-align: right;
+	    	border-right: 10px;
+	    	padding: 10px 10px;
+	    }
+	    .text
+	    {
+	    	width: 50%;
+	    	height: 180px;
+	    	/*border: solid 1px #fff;*/
+	    	text-align: center;
+	    	overflow: hidden;
+	    }
+	    .text .pietext
+	    {
+	    	display: inline-block;
+			vertical-align: middle;	
+	    }
+	    .text .enlaces
+	    {
+	    	display: inline-block;
+			vertical-align: middle;	
+	    }
+	    .pietext
+	    {
+	    	width: 45%;
+	    	height: 100%;
+	    	border-right: solid 2px #ff0000;
+	    	color: #fff;
+	    	padding: 2px 2px;
+	    }
+	    .enlaces
+	    {
+	    	width: 45%;
+	    	height: 100%;
+	    	border-left:  solid 2px #ff0000;
+	    	color: #fff;
+	    }
+	    .titulo_enlaces
+	    {
+	    	color: #ff0000;
+	    }
+	    .copyright
+	    {
+	    	width: 100%;
+	    	height: auto;
+	    	/*background-color: #000;*/
+	    	text-align: center;
+	    	color: #fff;
+	    }
+	    #galeria
+		{
+			width: 100%;
+			height: auto;
+			/*background-color: #aff;*/
+		}
+		.noticias
+		{
+			text-align: center;
+		}
+		@font-face{
+			font-family: Anton-Regular;
+			src:url(Fonts/Anton-Regular.ttf);
+		}
+		.titulo_noticias
+		{
+			width: 100%;
+			padding: 8px 0px;
+			/*background-color: #000;*/
+			color:#fff;
+			font-family: Anton;
+			font-size: 36px;
+			text-align: center;
+			margin-top: 1%;
+			margin-bottom: 3%;
+		}
+		.noticias .pdf
+		{
+			display: inline-block;
+			vertical-align: middle;	
+		}
+		.noticias .imgnot
+		{
+			display: inline-block;
+			vertical-align: middle;	
+		}
+		.imgnot
+		{
+			max-width: 700px;
+			width: 80%;
+			height: auto;
+			/*border: solid 1px #fff;*/
+			margin: 10px;
+			text-align: center;
+		}
+		.imgnot .img
+		{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.imgnot .txt
+		{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.img
+		{
+			width: 100%;
+			max-width: 400px;
+			height: 800px;
+			/*border: solid 1px #ff0000;*/
+			margin-right: 10px;
+		}
+		.txt
+		{
+			width: 100%;
+			max-width: 250px;
+			height: 800px;
+			/*border: solid 1px #ff00a0;*/
+		}
+		@font-face{
+			font-family: tahoma;
+			src:url(Fonts/tahoma.ttf);
+		}
+		.apex
+		{
+			color: #fff;
+			font-family: Tahoma;
+			text-align: left;
+			font-size: 16px;
+		}
+		.apex1
+		{
+			color: #f23b3b;
+			font-family: Tahoma;
+			text-align: center;
+		}
+		.pdf
+		{
+			max-width: 400px;
+			width: 80%;
+			height: 800px;
+			/*border: solid 1px #ff0000;*/
+			margin: 10px;
+		}
+		.eventos
+		{
+			height: auto;
+			overflow: hidden;
+			text-align: center;
+		}
+		.eventos .pdfe
+		{
+			display: inline-block;
+			vertical-align: middle;	
+		}
+		.eventos .imgev
+		{
+			display: inline-block;
+			vertical-align: middle;	
+		}
+		.eventos .imge2
+		{
+			display: inline-block;
+			vertical-align: middle;	
+		}
+		@font-face{
+			font-family: Anton-Regular;
+			src:url(Fonts/Anton.ttf);
+		}
+		.titulo_eventos
+		{
+			width: 100%;
+			padding: 8px 0px;
+			/*background-color: #000;*/
+			color:#fff;
+			font-family: Anton;
+			font-size: 36px;
+			text-align: center;
+			margin-top: 5%;
+			margin-bottom: 3%;
+		}
+		.pdfe
+		{
+			max-width: 200px;
+			width: 80%;
+			height: 800px;
+			/*border: solid 1px #ff0000;*/
+			margin: 10px;
+		}
+		.imgev
+		{
+			max-width: 900px;
+			width: 80%;
+			height: 800px;
+			/*border: solid 1px #fff;*/
+			margin: 10px;
+			text-align: center;
+		}
+		.imgev .txtev
+		{
+			display: inline-block;
+			vertical-align: middle;	
+		}
+		.imgev .imge
+		{
+			display: inline-block;
+			vertical-align: middle;	
+		}
+		@font-face{
+			font-family: tahoma;
+			src:url(Fonts/tahoma.ttf);
+		}
+		.evpri
+		{
+			width: 100%;
+			color: #dd6d6d;
+			font-family: Tahoma;
+		}
+		.txtev
+		{
+			max-width: 450px;
+			width: auto;
+			height: auto;
+			color: #fff;
+			text-align: left;
+		}
+		.imge
+		{
+			max-width: 430px;
+			width: auto;
+			height: auto;
+		}
+		.imge2
+		{
+			max-width: 900px;
+			width: auto;
+			height: auto;
+		}
+		.formulario
+		{
+			display: block;
+			width: 80%;
+			min-width: 300px;
+			background-color: #e3e3e3; 
+			font-family: Arial;
+			margin: auto;
+			color: #0d5d6b;
+			padding: 1px;
+		}
+		form
+		{
+			width: 90%;
+			/*border: solid 2px #ff0000;*/
+			margin: auto; 
+		}
+		label
+		{
+			display: block;	
+			margin-top: 0px;
+			letter-spacing: 1px;
+		}
+		input,textarea
+		{
+			width: 100%;
+			height: 40px;
+			background-color: #777777; 
+			border: solid 1px #f6f6f6;
+			color: #ffffff;
+			padding: 10px;
+			margin-top: 1px;
+		}
+    	textarea
+    	{
+    		width: 100%;
+    		resize: none;
+    	}
+    	#submit
+		{
+			width: 100px;
+			border: none;
+			margin-top: 1px;
+			cursor: pointer;	
+		}
+		.port
+		{
+			max-height: 2000px;
+		}
+	    /*INICIO DE GALERIA*/
+		apa img{position:absolute;width:100%;}
+.sliderCapa h2{position:absolute;top:65%;padding:2% 2%;color:#ccc;background:rgba(0,0,0,.6);font-size:2.5em}*/
+
+/*//// slide varias cajas horizontales    */
+.javiSlideContenedor{position:relative;width:100%;margin:0;}
+.javiSlideContenedor .javiSlidePrev{position:absolute;left:0;top:0px;text-align:left;}
+.javiSlideContenedor .javiSlideNext{position:absolute;right:0;top:0px;text-align:right;}
+.javiSlideContenedor .javiSlideCaja {overflow:hidden;margin:0px;width:100%;}
+.javiSlideContenedor .javiSlideCaja .javiSlideCampo {position:relative;width:100%;height:0px;margin:0px;padding-bottom:15%;float:left;}
+.javiSlideContenedor .javiSlideCaja .javiSlideCampo img{position:relative;left:0px;top:0px;width:100%;}
+
+
+
+/*//// slide Responsive    */
+#slider-wrapper {position:relative;max-width:100%;margin:0 auto;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background-color:#033;}
+#slider-wrapper a{text-decoration:none;}
+/* Contenedor slider */
+#slider {position:relative;width:100%;padding-bottom:43%;overflow:hidden;margin:0 auto;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+#slider > div {position:absolute;top:0;left:0;width:100%;min-height:100%;margin:0 auto;}
+/* Ajuste de las imágenes */
+#slider img {position:absolute;width:100%;min-height:100%;border:0;}
+/* Texto que acompaña a cada imagen */
+#slider p {-webkit-transition:.5s;position:absolute;bottom:5%;left:30%;right:30%;padding:10px;color:#eee;font-size:1.5em;display:block;text-align:center;background:rgba(100,200,200,.7);font-family:Tahoma; }
+#slider p:hover {-webkit-transform:scale(1.2);background:rgba(255,153,0,.10);box-shadow:0 0 50px #222;}
+/* Flechas de navegación */
+a.mas, a.menos {position:absolute;top:40%;left:10px;z-index:1;width:30px;height:50px;text-align:center;line-height:45px;font-size:6em;color:#fff;-webkit-transition:.5s;}
+a.mas {left:100%;margin-left:-60px;}
+
+a.mas:hover, a.menos:hover {color:#ff6600;}
+.irArriba {-webkit-transition:.5s;display:none;position:fixed;right:20px;bottom:20px;padding:10px 18px;background:rgba(51,153,255,.7);color:#fff;font-size:2em;font-weight:bold;cursor:pointer;}
+.irArriba:hover{background:rgba(51,153,255,1);}
+		/*FINAL DE GALERIA*/
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('#slider div:gt(0)').hide();
+	var interval = setInterval(changeDiv, 6000);
+	function changeDiv(){
+		$('#slider div:first-child').fadeOut(1000).next('div').fadeIn(1000).end().appendTo('#slider');
+	};
+	$('.mas').click(function(){
+		changeDiv();
+		clearInterval(interval);
+		interval = setInterval(changeDiv, 6000);
+	});
+	$('.menos').click(function(){
+		$('#slider div:first-child').fadeOut(1000);
+		$('#slider div:last-child').fadeIn(1000).prependTo('#slider');
+		clearInterval(interval);
+		interval = setInterval(changeDiv, 6000);
+	});
+	$('#slider').mouseover(function(){  // cuando el mouse esta encima
+		clearInterval(interval); //desactivamos el temporizador
+		return false;
+	}).mouseout(function(){ // cuando el mouse se haya quitado de encima
+		interval = setInterval(changeDiv, 6000);	//volvemos a activar el temporizador
+		return false;
+	});
+});
+</script>
+	</style>
+</head>
+<body>
+	<nav>
+		<img src="imagenes/logo.png" class="logo">		
+			<div class="navegador"><a href="#acerca de" class="menu">ACERCA DE</a></div>
+			<div class="navegador"><a href="#juegos" class="menu">JUEGOS</a></div>
+			<div class="navegador"><a href="#noticias" class="menu">NOTICIAS</a></div>
+			<div class="navegador"><a href="#eventos" class="menu">EVENTOS</a></div>		
+	</nav>
+	<header>
+		<img class="port" src="imagenes/inicio.gif" width="100%">
+		<div class="caja_titulo">
+			<h1 class="titulo">!ENCUENTRA<br>LO QUE BUSCAS!</h1>
+		</div>
+	</header>
+		<a name="acerca de"></a>
+		<h2 class="titulo_acerca">ACERCA DE</h2>
+	<section>
+		<div class="foto">
+			<img src="imagenes/imagen.png">
+		</div>
+		<div class="texto">
+			
+			<h2 class="mision">ALLGAMER</h2>
+			<p class="parrafo">
+				Al existir un gran cantidad de paginas en la inmensa plataforma de Internet, esta página ofrece diferentes servicios y busca la manera más fácil y sencilla de hacerlo.
+				<br>Historia<br>
+				Lleva apenas en su primer año de inicio, sin embargo promete cumplir muchas expectativas gracias a su buen funcionamiento y a su rapidez al momento de cargar la página.
+				<br>Visión<br>
+				Poder ser una de las primeras paginas reconocida acerca de juegos en diferentes plataformas es uno de los objetivos de la empresa.
+				<br>Misión<br>
+				Ser una página sencilla y de fácil manejo, mostrando información correcta y concreta, esta página mostrara e informara lo más concreto posible, en cuanto a juegos tanto en pc, ps, xbox, etc se refiere.
+			</p>
+		</div>
+	</section>
+	<a name="juegos"></a>
+	<h2 class="titulo_juegos">JUEGOS</h2>
+	<article>				
+			<div class="boxtexto">
+				<h2 class="titulo_games">GAMES<br>2019</h2>
+				<p align="left">
+					Está siendo un año para en marcar en lo que a grandes videojuegos se refiere, y eso que aún estamos calentando motores. La cantidad y calidad de títulos que están llegando a PC, PS4, Xbox One, etc es digna de mención y aplauso.
+					<br>
+					Para no perderles la pista hemos recopilado los mejores juegos de PC en 2019 con una lista que iremos actualizando conforme se vayan añadiendo fechas, juegos y joyas al catálogo de las principales tiendas. Por ahora, estos son los que más hemos disfrutado y los que esperamos con más ganas.
+					<br>
+					Muchos de esto ya son muy conocidos y tienen un gran recorrido sin embargo la popularidad de los mismos llega mejor con nuevas actualizaciones y nuevas cosas.
+					<br>
+					Conoce támbien los juegos mas populares y emocionantes del 2019, diviertete e informate gracias a nuestra página.
+				</p>
+			</div>
+		
+		<div class="boxjuegos">
+				<img src="imagenes/img1.gif"class="escalar" onmouseover=src="imagenes/img1.jpg" onmouseout=src="imagenes/img1.gif">
+				<img src="imagenes/img2.gif"class="escalar" onmouseover=src="imagenes/img2.jpg" onmouseout=src="imagenes/img2.gif">
+				<img src="imagenes/img3.gif"class="escalar" onmouseover=src="imagenes/img3.jpg" onmouseout=src="imagenes/img3.gif">
+				<img src="imagenes/img4.gif"class="escalar" onmouseover=src="imagenes/img4.jpg" onmouseout=src="imagenes/img4.gif">
+				<img src="imagenes/img5.gif"class="escalar" onmouseover=src="imagenes/img5.jpg" onmouseout=src="imagenes/img5.gif">
+				<img src="imagenes/img6.gif"class="escalar" onmouseover=src="imagenes/img6.jpg" onmouseout=src="imagenes/img6.gif">
+				<img src="imagenes/img7.gif"class="escalar" onmouseover=src="imagenes/img7.jpg" onmouseout=src="imagenes/img7.gif">
+				<img src="imagenes/img8.gif"class="escalar" onmouseover=src="imagenes/img8.jpg" onmouseout=src="imagenes/img8.gif">
+				<img src="imagenes/img9.gif"class="escalar" onmouseover=src="imagenes/img9.jpg" onmouseout=src="imagenes/img9.gif">
+				<img src="imagenes/img10.gif"class="escalar" onmouseover=src="imagenes/img10.jpg" onmouseout=src="imagenes/img10.gif">
+				<img src="imagenes/img11.gif"class="escalar" onmouseover=src="imagenes/img11.jpg" onmouseout=src="imagenes/img11.gif">
+				<img src="imagenes/img12.gif"class="escalar" onmouseover=src="imagenes/img12.jpg" onmouseout=src="imagenes/img12.gif">
+		</div>
+	</article>
+	<container>
+		<div id="galeria">
+	<div id="slider-wrapper">
+		<a href="javascript:void();" class="mas">&rsaquo;</a>
+		<a href="javascript:void();" class="menos">&lsaquo;</a>
+		<div id="slider">
+			<div>
+				<img src="imagenes/1.jpg"/>
+				<a href="#"><p>STREET FIGHTER</p></a>
+			</div>
+			<div>
+				<img src="imagenes/2.jpg"/>
+				<a href="#"><p>DESTINY</p></a>
+			</div>
+			<div>
+				<img src="imagenes/3.jpg"/>
+				<a href="#"><p>BATTLE FOR</p></a>			
+			</div>
+			<div>
+				<img src="imagenes/4.jpg"/>
+				<a href="#"><p>JUMP FORCE</p></a>
+			</div>
+		</div>
+	</div>
+	</div>
+	</container>
+	<div class="noticias">
+		<a name="noticias"></a>
+		<h2 class="titulo_noticias">NOTICIAS</h2>
+		<div class="imgnot">
+			<div class="img">
+				<img src="imagenes/apex.jpg">
+			</div>
+			<div class="txt">
+				<h4 class="apex1">APEX LEGENDS</h4>
+				<p class="apex">La Guerra de la Frontera ha terminado. Tras décadas de conflicto entre IMC y la Milicia que se creó para combatirla, la paz ha llegado por fin a la remota región del espacio conocida como la Frontera.
+				Pero la liberación a veces tiene un precio: los planetas de la Frontera quedaron arrasados por las hostilidades y las ayudas prometidas se quedaron en nada. Sin medios para sustentarse, quienes habían quedado allí no tuvieron otra opción que abandonar sus hogares. Los más valientes se trasladaron a las Tierras Salvajes.
+
+				Las Tierras Salvajes, un remoto conjunto de planetas en los confines de la Frontera, no se habían visto afectadas por la guerra y eran abundantes en recursos y oportunidades. Sin embargo, la vida allí tiene muy poco valor, y el peligro amenaza detrás de cada esquina. Los pioneros, exploradores y forajidos que las habitan solían pasar su vida enzarzados en una eterna lucha de poder, pero ahora resuelven sus diferencias en los Apex Games</p>
+			</div>
+		</div>
+		<div class="pdf"><embed src="medios/NOTICIAS.pdf" width="400px" height="800px" href="medios/NOTICIAS.pdf"></embed></div>
+	</div>
+
+	<div class="eventos">
+		<a name="eventos"></a>
+		<h2 class="titulo_acerca">EVENTOS</h2>
+		<div class="pdfe">
+			<embed src="medios/EVENTOS.pdf" width="200px" height="800px" href="medios/EVENTOS.pdf"></embed>
+		</div>
+		<div class="imgev">
+			<h2 class="evpri">Evento Principal</h2>
+			<div class="txtev">
+				<p>Empezamos destacando el evento más importante del mundo para profesionales del sector: programadores, artistas, productores, diseñadores, músicos, publishers e inversores.
+			GDC se compone de seis partes: Conferencias y exposición (del 18 al 22 de marzo), un festival dedicado a los estudios de videojuegos independientes: IGF que busca visibilizar el desarrollo de estos y darles el reconocimiento que se merecen (ya celebrado el pasado mes de marzo de 2018), una prestigiosa entrega de premios Game Developer Choice Awards, GDC Vault dedicado a conferencias más técnicas para lo profesionales de la industria, GAMESTRA para los análisis y señas de nuevos juegos, XRDC orientado al VR, RA y mixto más dedicado a la educación y el diseño industrial para marcas entre otras cosas, y por si fuera poco, también han creado una versión europea del evento que se celebra conjuntamente con el Gamescom de Alemania del que hablaremos más adelante.
+			Este y muchos eventos te esperan dentro de poco, conoce e informate de lo mejor en videojuegos con lo mejor.
+			</p>
+			</div>
+			<div class="imge">
+				<img src="imagenes/evprincipal.jpg" width="430px" height="450px">
+			</div>	
+				<div class="formulario">
+				<h5 align="center">Formulario</h5>
+				<form action="mailto: jhonnya.sairequisbert@gmail.com" method=post>
+				<label for="nombre">Nombre:</label>
+				<input types="text" name="nombre" id="nombre">
+
+				<label for="email">E-mail</label>
+				<input type="email" name="email" id="email">
+
+				<label  for="mensaje">Mensaje</label>
+				<textarea name="mensaje" id="mensaje"></textarea>
+				<center><input type="submit" name="submit" id="submit" value="ENVIAR"></center>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="pie">
+			<div class="text">
+				<div class="pietext">
+					Esperemos todos los artículos de la página hayan sido de su agrado, finalizando la página ponemos a su disposición enlaces para saber aun mas de lo que le gusta y el evento de videojuegos de la ciudad de La Paz.
+				</div>
+				<div class="enlaces">
+					<h3 class="titulo_enlaces">Enlaces</h3>
+					<a href="https://www.gdconf.com" target="_blank">https://www.gdconf.com</a>
+					<br>
+					<a href="https://www.e3expo.com" target="_blank">https://www.e3expo.com</a>
+					<br>
+					<a href="http://www.tgs.com.ar" target="_blank">http://www.tgs.com.ar</a>
+					<br>
+					<a href="https://www.bgw.com" target="_blank">https://www.bgw.com</a>
+				</div>
+			</div>
+			<div class="mapa">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15302.916942112477!2d-68.1463876!3d-16.4892424!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x492784d8d68fe925!2sSalon+de+Eventos+Infantiles+-+Mundo+M%C3%A1gico!5e0!3m2!1ses-419!2sbo!4v1560161368024!5m2!1ses-419!2sbo" width="400" height="180" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>		
+		</div>
+	<div class="ultimo">
+		<div class="redsoc">
+			<a href="https://www.facebook.com" target="_blank"><img src="imagenes/log1.png"></a>
+			<a href="https://www.instagram.com/?hl=es-la" target="_blank"><img src="imagenes/log2.png"></a>
+			<a href="https://twitter.com/iniciarsesion?lang=es" target="_blank"><img src="imagenes/log3.png"></a>
+			<a href="https://play.google.com/store/apps/details?id=com.google.android.apps.plus&hl=es_419" target="_blank"><img src="imagenes/log4.png"></a>
+		</div>
+		<div class="copyright">
+		<p>ª 2019 Jhonny Saire Quisbert, Derechos reservados | Real Estate Adveristing by Placester</p>
+		</div> 
+	</div>
+	</footer>
+
+</body>
+</html>
